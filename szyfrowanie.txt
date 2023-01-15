@@ -1,0 +1,11 @@
+import base64
+
+def szyfrowanie_base64(podana_wartosc): #string 
+    data_bytes = podana_wartosc.encode('ascii')
+    
+    base64_bytes = base64.b64encode(data_bytes)
+    base64_string = base64_bytes.decode('ascii')
+    
+    print("Zaszyfrowana wiadomosc: ", base64_string)
+    
+szyfrowanie_base64()

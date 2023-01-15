@@ -1,0 +1,19 @@
+import random
+import string
+
+def gen_hasla():
+    random_source = string.ascii_letters + string.digits + string.punctuation
+    haslo = random.choice(string.ascii_lowercase)
+    haslo += random.choice(string.ascii_uppercase)
+    haslo += random.choice(string.digits)
+    haslo += random.choice(string.punctuation)
+
+    for i in range(random.randint(4,20)):
+        haslo += random.choice(random_source)
+
+    list_hasla = list(haslo)
+    random.SystemRandom().shuffle(list_hasla)
+    haslo = ''.join(list_hasla)
+    print ("Twoje wygenerowane haslo to:", haslo)
+
+gen_hasla()
